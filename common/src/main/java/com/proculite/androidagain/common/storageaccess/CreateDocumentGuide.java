@@ -45,6 +45,13 @@ public class CreateDocumentGuide implements ActivityResultCallback<Uri> {
                 .registerForActivityResult(createDocumentContract, this);
     }
 
+    public static CreateDocumentGuide anyMimeType(
+            Context context,
+            ActivityResultCaller activityResultCaller
+    ){
+        return new CreateDocumentGuide(context, activityResultCaller, "*/*");
+    }
+
     @Override
     public final void onActivityResult(Uri o) {
         uriHandler.handleUri(o);
