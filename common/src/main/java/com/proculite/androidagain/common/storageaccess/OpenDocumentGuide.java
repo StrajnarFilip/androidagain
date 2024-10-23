@@ -54,4 +54,9 @@ public class OpenDocumentGuide implements ActivityResultCallback<Uri> {
 
         openDocumentLauncher.launch(suggestedMimeTypes);
     }
+
+    public void readFromInputStream(InputStreamHandler inputStreamHandler){
+        // Any MIME type.
+        readFromInputStream(new String[]{"*/*"},inputStreamHandler);
+    }
 }
